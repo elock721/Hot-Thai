@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
-var tableArray = require("data/table.js")
-var waitingArray = require("data/waiting.js")
+var tableArray = require("./backend/data/table.js")
+var waitingArray = require("./backend/data/waiting.js")
 
 // Sets up the Express App
 // =============================================================
@@ -12,15 +12,13 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
 // Routes
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
   // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "frontend/index.html"));
 });
 
 // Displays all characters
