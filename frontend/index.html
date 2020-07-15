@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thai Fire</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <span class="glyphicon glyphicon-fire"></span> Hot Thai</h1>
+            <hr>
+            <h2 class="text-center">We only have 5 tables.  Don't sleep on this!</h2>
+            <br>
 
+            <div class="text-center">
+                <a href="/tables">
+                    <button type="button" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-list-alt"></span> View Tables</button>
+                </a>
+                <a href="/reservation">
+                    <button type="button" class="btn btn-lg btn-danger">
+                        <span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button>
+                </a>
+            </div>
+        </div>
 
-<script src="app.js"></script>
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="#" id="clear">Clear Table</a> |
+					<a href="/api/tables">API Table Link</a> |
+					<a href="/api/waitlist">API Wait List</a> |
+                </p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
