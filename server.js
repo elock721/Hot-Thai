@@ -21,6 +21,16 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "frontend/index.html"));
 });
 
+app.get("/reservation", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "frontend/reservation.html"));
+});
+
+app.get("/tables", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "frontend/table.html"));
+});
+
 // Displays all characters
 app.get("/api/tables", function(req, res) {
   return res.json(tableArray);
@@ -29,6 +39,10 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/waitlist", function(req, res) {
     return res.json(waitingArray);
   });
+
+
+
+
 
 // Displays a single character, or returns false
 // app.get("/api/characters/:character", function(req, res) {

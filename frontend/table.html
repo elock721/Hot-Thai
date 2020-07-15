@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Make a Reservation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <span class="glyphicon glyphicon-fire"></span> Hot Thai</h1>
+            <hr>
+            <h2 class="text-center">Current Reservations</h2>
+            <br>
+        <div class= "text-center">
+            <a href = "/reservation">
+                <button type="button" class="btn btn-lg btn-danger">
+                    <span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button>
+            </a>
+            <a href = "/">
+                <button type="button" class="btn btn-lg btn-default">
+                    <span class="glyphicon glyphicon-home"></span>
+                </button>
+            </a>
+        </div>
+    </div>
+<div class = "row">
+    <div class ="col-lg-12">
+        <div class = "panel panel-default">
+           <div class="panel-heading">
+               <h4 class = "panel-title">Current Reservations</h4>
+           </div>
+           <div class= "panel-body"></div>
+        </div>
+        <div class = "panel panel-default">
+            <div class="panel-heading">
+                <h4 class = "panel-title">Waiting List</h4>
+            </div>
+            <div class= "panel-body"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>
+            <a href="/api/clear" id="clear">Clear Table</a> |
+            <a href="/api/tables">API Table Link</a> |
+            <a href="/api/waitlist">API Wait List</a> |
+        </p>
+    </div>
+</footer>
