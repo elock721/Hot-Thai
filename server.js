@@ -11,25 +11,13 @@ var PORT = process.env.PORT || 8080;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("frontend"));
+
 
 // Routes
 // =============================================================
 
-// Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
-  // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "frontend/index.html"));
-});
 
-app.get("/reservation", function(req, res) {
-  // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "frontend/reservation.html"));
-});
-
-app.get("/tables", function(req, res) {
-  // res.send("Welcome to the Star Wars Page!")
-  res.sendFile(path.join(__dirname, "frontend/table.html"));
-});
 
 // Displays all characters
 app.get("/api/tables", function(req, res) {
@@ -60,7 +48,8 @@ app.get("/api/waitlist", function(req, res) {
 // });
 
 // Create New Characters - takes in JSON input
-app.post("/api/table", function(req, res){
+app.post("/api/tables", function(req, res){
+  console.log(req.body);
     if(tableArray.length < 5){
         tableArray.push(req.body);
         return res.json(true);
@@ -73,6 +62,22 @@ app.post("/api/table", function(req, res){
 app.post("/api/clear", function(req, res){
     tableArray = [];
     waitingArray = [];
+});
+
+// Basic route that sends the user first to the AJAX Page
+app.get("/", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/reservation", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "/frontend/reservation.html"));
+});
+
+app.get("/tables", function(req, res) {
+  // res.send("Welcome to the Star Wars Page!")
+  res.sendFile(path.join(__dirname, "/frontend/table.html"));
 });
 
 
