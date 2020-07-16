@@ -83,6 +83,40 @@
 
 loadTables();
 
+    function loadWaitlist() {
+        // var currentURL = window.location.href;
+        $.ajax({ url: "/api/waitList", method: "GET" })
+            .then(function(waitlistData){
+        console.log(waitlistData);
+        for (let i = 0; i < waitlistData.length; i++) {
+            var waitlistQue = $("#waitlist");
+            var listItem = $("<li class = 'list-group-item mt-4'>");
+            listItem.append(
+                $("<h2>").text("Waitlist #" + (i + 1)),
+                $("<hr>"),
+                $("<h2>").text("Id:" + waitlistData[i].customerId),
+                $("<h2>").text("Name:" + waitlistData[i].customerName),
+                $("<h2>").text("Email:" + waitlistData[i].customerEmail),
+                $("<h2>").text("Phone:" + waitlistData[i].phoneNumber),
+            )
+            waitList.append(listItem);
+        }
+    })
+}
+
+loadWaitlist();
+
+function clearTable() {
+    $.ajax({ url: "/api/clear", method: "POST" })
+
+}
+
+$("#clear").on("click", function(){
+    alert("Clear!");
+}); 
+
+clearTable();
+
 
 
 </script>
