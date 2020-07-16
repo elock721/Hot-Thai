@@ -14,11 +14,6 @@ app.use(express.json());
 app.use(express.static("frontend"));
 
 
-// Routes
-// =============================================================
-
-
-
 // Displays all characters
 app.get("/api/tables", function(req, res) {
   return res.json(tableArray);
@@ -63,6 +58,10 @@ app.post("/api/clear", function(req, res){
     tableArray = [];
     waitingArray = [];
 });
+
+// Routes
+// =============================================================
+
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
