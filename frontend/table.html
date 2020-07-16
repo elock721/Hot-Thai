@@ -38,7 +38,9 @@
            <div class="panel-heading">
                <h4 class = "panel-title">Current Reservations</h4>
            </div>
-           <div class= "panel-body"></div>
+           <div class= "panel-body">
+               <ul id="tablelist" class="list-group" ></ul>
+           </div>
         </div>
         <div class = "panel panel-default">
             <div class="panel-heading">
@@ -56,3 +58,34 @@
         </p>
     </div>
 </footer>
+<script type="text/javascript">
+
+    function loadTables(){
+        $.ajax({url:"/api/tables", method: "GET"})
+        .then(function(tableData){
+            console.log(tableData)
+            for (let i = 0; i < tableData.length; i++) {
+                var tableList = $("#tablelist");
+                var listItem = $("<li class = 'list-group-item mt-4'>");
+                listItem.append(
+                    $("<h2>").text("Table #" + (i+1)),
+                    $("<hr>"),
+                    $("<h2>").text("Id:" + tableData[i].customerId),
+                    $("<h2>").text("Name:" + tableData[i].customerName),
+                    $("<h2>").text("Email:" + tableData[i].customerEmail),
+                    $("<h2>").text("Phone:" + tableData[i].phoneNumber),
+
+                )
+                tableList.append(listItem);
+            }
+        })
+    }
+
+loadTables();
+
+
+
+</script>
+
+</body>
+</html>
