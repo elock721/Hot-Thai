@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/elock721/Hot-Thai#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
